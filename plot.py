@@ -47,8 +47,8 @@ def smooth_data(data, window_size=5):
 
 plt.figure(figsize=(12, 6))
 for completion in malicious_completions:
-    clean_losses = remove_outliers(losses[completion])
-    smoothed_losses = smooth_data(clean_losses, window_size=WINDOW_SIZE)  # Adjust window_size as needed
+    # clean_losses = remove_outliers(losses[completion])
+    smoothed_losses = smooth_data(losses[completion], window_size=WINDOW_SIZE)  # Adjust window_size as needed
     plt.plot(range(len(smoothed_losses)), smoothed_losses, 
              label=completion[:50] + '...' if len(completion) > 50 else completion,
              linewidth=2)
